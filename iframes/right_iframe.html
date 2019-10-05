@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p class="message">尚未接收到信息~</p>
+</body>
+</html>
+
+<script type="text/javascript">
+	window.addEventListener('message', function(e){
+		message = e.data
+		document.querySelector('.message').innerHTML = message
+	}, false)	
+
+</script>

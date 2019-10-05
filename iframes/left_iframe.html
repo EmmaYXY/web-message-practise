@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form>
+	<input type="text" name="text">
+	<button type="submit">发送</button>
+</form>
+</body>
+</html>
+
+<script type="text/javascript">
+	var form = document.querySelector('form')
+	form.onsubmit = function() {
+		var message = document.querySelector("input[type='text']").value
+		// window.parent.frames['right'] 指要接收message的window的引用
+		// 第二个参数指定 接收message的window的源
+		window.parent.frames['right'].postMessage(message, 'http://localhost:8888')
+	}
+</script>
