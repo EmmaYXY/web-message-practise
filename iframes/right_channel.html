@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p class="message">尚未接收到信息~</p>
+</body>
+</html>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+  	let mc = new MessageChannel()
+  	window.parent.postMessage('I have created the channel.', '*', [mc.port2])
+  })
+</script>
