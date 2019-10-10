@@ -12,7 +12,14 @@
 </html>
 
 <script type="text/javascript">
+	let port = null, form = document.querySelector('form')
 	window.addEventListener('message', function(e){
-		console.info('left_channel has catched a message', e)
+		port = e.ports[0]
 	})
+	form.onsubmit = function(){
+		let value = document.querySelector("input[type='text']").value
+		if (port) {
+			port.postMessage(value)
+		}
+	}
 </script>

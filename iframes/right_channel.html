@@ -12,5 +12,10 @@
   document.addEventListener('DOMContentLoaded', function(){
   	let mc = new MessageChannel()
   	window.parent.postMessage('I have created the channel.', '*', [mc.port2])
+  	mc.
+  })
+  window.addEventListener('message', function(e){
+  	console.info('hahaha')
+  	document.querySelector('p').innerHtml = e.data
   })
 </script>

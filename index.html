@@ -28,8 +28,9 @@
 
 <script type="text/javascript">
 	window.addEventListener('message', function(e){
-		console.info('index', e)
-		window.frames['left_channel'].postMessage(e.data, '*', [e.ports[0]])
+		if (e.ports.length > 0) {
+			window.frames['left_channel'].postMessage(e.data, '*', e.ports)
+		}
 	})
 </script>
 
